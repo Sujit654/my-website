@@ -1,107 +1,1251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Special Surprise 🎁</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Class 10 Maths Formula Book</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#eef2f7;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#141e30,#243b55);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+header p{
+    font-size:17px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:25px;
+}
+
+.search{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:12px;
+    font-size:17px;
+    margin-bottom:25px;
+    box-shadow:0 3px 12px #bbb;
+    outline:none;
+}
+
+.chapter-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.chapter{
+    background:white;
+    padding:22px;
+    border-radius:15px;
+    box-shadow:0 4px 12px #ccc;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.chapter:hover{
+    transform:translateY(-6px);
+    box-shadow:0 8px 20px #aaa;
+}
+
+.chapter h3{
+    color:#243b55;
+    margin-bottom:10px;
+}
+
+.chapter p{
+    color:#666;
+}
+
+.formula-page{
+    display:none;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 4px 15px #ccc;
+}
+
+.formula-page h2{
+    color:#243b55;
+    margin-bottom:20px;
+}
+
+.section-title{
+    margin-top:25px;
+    margin-bottom:12px;
+    color:#141e30;
+    border-bottom:2px solid #243b55;
+    padding-bottom:7px;
+}
+
+.formula{
+    background:#f4f7fb;
+    border-left:5px solid #243b55;
+    padding:15px;
+    margin:12px 0;
+    border-radius:7px;
+    font-size:17px;
+    line-height:1.6;
+}
+
+.important{
+    background:#fff8df;
+    border-left:5px solid #e0a800;
+}
+
+button{
+    background:#243b55;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    margin-bottom:20px;
+}
+
+button:hover{
+    background:#141e30;
+}
+
+footer{
+    margin-top:30px;
+    padding:25px;
+    text-align:center;
+    background:#141e30;
+    color:white;
+}
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:26px;
+    }
+
+    .container{
+        padding:15px;
+    }
+
+    .formula{
+        font-size:15px;
+    }
+
+}
+
+</style>
 </head>
 
 <body>
 
-    <div class="hearts"></div>
+<header>
 
-    <main class="container">
+<h1>📚 Class 10 Maths Formula Book</h1>
 
-        <!-- PAGE 1 -->
-        <section id="page1" class="page active">
-            <div class="emoji">🎁</div>
+<p>Basic + Important + Exam Formulas</p>
 
-            <h1>Hey You! 💕</h1>
-
-            <p class="subtitle">
-                I have a little surprise for you...
-            </p>
-
-            <button onclick="nextPage(2)">
-                Open Surprise ✨
-            </button>
-        </section>
+</header>
 
 
-        <!-- PAGE 2 -->
-        <section id="page2" class="page">
-            <div class="emoji">💖</div>
+<div class="container">
 
-            <h1>Wait... 👀</h1>
-
-            <p>
-                Are you ready for something special?
-            </p>
-
-            <div class="buttons">
-                <button onclick="nextPage(3)">YES 😍</button>
-                <button class="noBtn" onclick="moveButton(this)">NO 🙈</button>
-            </div>
-        </section>
+<input
+type="text"
+id="search"
+class="search"
+placeholder="🔍 Search chapter or formula..."
+onkeyup="searchChapter()"
+>
 
 
-        <!-- PAGE 3 -->
-        <section id="page3" class="page">
-            <div class="emoji">🎉</div>
+<!-- ================= CHAPTER LIST ================= -->
 
-            <h1>Surprise! 🥳</h1>
+<div id="chapterList" class="chapter-grid">
 
-            <p>
-                You just unlocked a special message! 💕
-            </p>
+<div class="chapter" onclick="showChapter('real')">
+<h3>1. Real Numbers</h3>
+<p>Euclid Algorithm, HCF, LCM, irrational numbers</p>
+</div>
 
-            <button onclick="nextPage(4)">
-                Continue 💌
-            </button>
-        </section>
+<div class="chapter" onclick="showChapter('polynomial')">
+<h3>2. Polynomials</h3>
+<p>Zeroes, coefficients, quadratic polynomial</p>
+</div>
+
+<div class="chapter" onclick="showChapter('linear')">
+<h3>3. Pair of Linear Equations</h3>
+<p>Conditions, graphical and algebraic methods</p>
+</div>
+
+<div class="chapter" onclick="showChapter('quadratic')">
+<h3>4. Quadratic Equations</h3>
+<p>Roots, discriminant, quadratic formula</p>
+</div>
+
+<div class="chapter" onclick="showChapter('ap')">
+<h3>5. Arithmetic Progressions</h3>
+<p>nth term and sum formulas</p>
+</div>
+
+<div class="chapter" onclick="showChapter('triangles')">
+<h3>6. Triangles</h3>
+<p>Similarity, BPT, Pythagoras theorem</p>
+</div>
+
+<div class="chapter" onclick="showChapter('coordinate')">
+<h3>7. Coordinate Geometry</h3>
+<p>Distance, section formula, area</p>
+</div>
+
+<div class="chapter" onclick="showChapter('trigonometry')">
+<h3>8. Introduction to Trigonometry</h3>
+<p>Ratios, identities, standard values</p>
+</div>
+
+<div class="chapter" onclick="showChapter('applications')">
+<h3>9. Applications of Trigonometry</h3>
+<p>Heights and distances</p>
+</div>
+
+<div class="chapter" onclick="showChapter('circles')">
+<h3>10. Circles</h3>
+<p>Tangents and important theorems</p>
+</div>
+
+<div class="chapter" onclick="showChapter('areas')">
+<h3>11. Areas Related to Circles</h3>
+<p>Circle, sector, segment</p>
+</div>
+
+<div class="chapter" onclick="showChapter('surface')">
+<h3>12. Surface Areas & Volumes</h3>
+<p>Cube, cuboid, cylinder, cone, sphere</p>
+</div>
+
+<div class="chapter" onclick="showChapter('statistics')">
+<h3>13. Statistics</h3>
+<p>Mean, median, mode</p>
+</div>
+
+<div class="chapter" onclick="showChapter('probability')">
+<h3>14. Probability</h3>
+<p>Probability and complementary events</p>
+</div>
+
+</div>
 
 
-        <!-- PAGE 4 -->
-        <section id="page4" class="page">
-            <div class="emoji">🌸</div>
+<!-- ================================================= -->
+<!-- 1 REAL NUMBERS -->
+<!-- ================================================= -->
 
-            <h1>For You 💗</h1>
+<div id="real" class="formula-page">
 
-            <p class="message">
-                You are a wonderful person! ✨<br><br>
-                Keep smiling, keep dreaming,<br>
-                and always believe in yourself. 🌷
-            </p>
+<button onclick="goHome()">⬅ Home</button>
 
-            <button onclick="nextPage(5)">
-                One More Thing 👀
-            </button>
-        </section>
+<h2>1. Real Numbers</h2>
+
+<h3 class="section-title">Euclid's Division Lemma</h3>
+
+<div class="formula important">
+a = bq + r
+<br>
+where 0 ≤ r < b
+</div>
+
+<h3 class="section-title">HCF and LCM</h3>
+
+<div class="formula">
+For two positive integers a and b:
+<br><br>
+<strong>HCF(a,b) × LCM(a,b) = a × b</strong>
+</div>
+
+<h3 class="section-title">Prime Factorisation</h3>
+
+<div class="formula">
+If
+<br>
+a = p₁ᵃ × p₂ᵇ × p₃ᶜ ...
+<br><br>
+then prime factorisation can be used to find HCF and LCM.
+</div>
+
+<div class="formula">
+<strong>HCF:</strong> Take the smallest powers of common prime factors.
+<br><br>
+<strong>LCM:</strong> Take the greatest powers of all prime factors.
+</div>
+
+<h3 class="section-title">Important Result</h3>
+
+<div class="formula important">
+If p is a prime number and p divides a²,
+then p divides a.
+</div>
+
+</div>
 
 
-        <!-- PAGE 5 -->
-        <section id="page5" class="page">
-            <div class="emoji">🎀</div>
+<!-- ================================================= -->
+<!-- 2 POLYNOMIALS -->
+<!-- ================================================= -->
 
-            <h1>Thank You! 💕</h1>
+<div id="polynomial" class="formula-page">
 
-            <p>
-                Thanks for being so special. 🥰
-            </p>
+<button onclick="goHome()">⬅ Home</button>
 
-            <div class="big-heart">
-                ❤️
-            </div>
+<h2>2. Polynomials</h2>
 
-            <button onclick="restart()">
-                Again 🔄
-            </button>
-        </section>
+<h3 class="section-title">Quadratic Polynomial</h3>
 
-    </main>
+<div class="formula">
+For polynomial:
+<br><br>
+ax² + bx + c
+<br><br>
+where a ≠ 0
+</div>
 
-    <script src="script.js"></script>
+<h3 class="section-title">Zeroes</h3>
+
+<div class="formula important">
+If α and β are zeroes of ax² + bx + c:
+<br><br>
+α + β = -b/a
+<br><br>
+αβ = c/a
+</div>
+
+<h3 class="section-title">Polynomial from Zeroes</h3>
+
+<div class="formula">
+If α and β are zeroes:
+<br><br>
+x² - (α + β)x + αβ
+</div>
+
+<div class="formula">
+General quadratic polynomial:
+<br><br>
+a[x² - (α + β)x + αβ]
+</div>
+
+<h3 class="section-title">Division Algorithm</h3>
+
+<div class="formula">
+Dividend = Divisor × Quotient + Remainder
+</div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- 3 LINEAR EQUATIONS -->
+<!-- ================================================= -->
+
+<div id="linear" class="formula-page">
+
+<button onclick="goHome()">⬅ Home</button>
+
+<h2>3. Pair of Linear Equations in Two Variables</h2>
+
+<h3 class="section-title">General Form</h3>
+
+<div class="formula">
+a₁x + b₁y + c₁ = 0
+<br><br>
+a₂x + b₂y + c₂ = 0
+</div>
+
+<h3 class="section-title">Number of Solutions</h3>
+
+<div class="formula important">
+<strong>Unique solution:</strong>
+<br>
+a₁/a₂ ≠ b₁/b₂
+</div>
+
+<div class="formula">
+<strong>No solution:</strong>
+<br>
+a₁/a₂ = b₁/b₂ ≠ c₁/c₂
+</div>
+
+<div class="formula">
+<strong>Infinitely many solutions:</strong>
+<br>
+a₁/a₂ = b₁/b₂ = c₁/c₂
+</div>
+
+<h3 class="section-title">Cross Multiplication</h3>
+
+<div class="formula">
+x/(b₁c₂ - b₂c₁)
+=
+y/(c₁a₂ - c₂a₁)
+=
+1/(a₁b₂ - a₂b₁)
+</div>
+
+<h3 class="section-title">Substitution</h3>
+
+<div class="formula">
+Find one variable in terms of another
+and substitute into the second equation.
+</div>
+
+<h3 class="section-title">Elimination</h3>
+
+<div class="formula">
+Multiply equations so that the coefficient
+of one variable becomes equal and eliminate it.
+</div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- 4 QUADRATIC -->
+<!-- ================================================= -->
+
+<div id="quadratic" class="formula-page">
+
+<button onclick="goHome()">⬅ Home</button>
+
+<h2>4. Quadratic Equations</h2>
+
+<h3 class="section-title">Standard Form</h3>
+
+<div class="formula important">
+ax² + bx + c = 0
+<br>
+a ≠ 0
+</div>
+
+<h3 class="section-title">Quadratic Formula</h3>
+
+<div class="formula important">
+x = (-b ± √(b² - 4ac)) / 2a
+</div>
+
+<h3 class="section-title">Discriminant</h3>
+
+<div class="formula">
+D = b² - 4ac
+</div>
+
+<div class="formula">
+D > 0 → Two distinct real roots
+<br><br>
+D = 0 → Two equal real roots
+<br><br>
+D < 0 → No real roots
+</div>
+
+<h3 class="section-title">Sum and Product of Roots</h3>
+
+<div class="formula">
+α + β = -b/a
+<br><br>
+αβ = c/a
+</div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- 5 AP -->
+<!-- ================================================= -->
+
+<div id="ap" class="formula-page">
+
+<button onclick="goHome()">⬅ Home</button>
+
+<h2>5. Arithmetic Progressions</h2>
+
+<h3 class="section-title">Basic Form</h3>
+
+<div class="formula">
+a, a+d, a+2d, a+3d, ...
+</div>
+
+<div class="formula">
+<strong>a</strong> = first term
+<br>
+<strong>d</strong> = common difference
+</div>
+
+<h3 class="section-title">Common Difference</h3>
+
+<div class="formula important">
+d = second term - first term
+</div>
+
+<h3 class="section-title">nth Term</h3>
+
+<div class="formula important">
+aₙ = a + (n - 1)d
+</div>
+
+<h3 class="section-title">Sum of n Terms</h3>
+
+<div class="formula important">
+Sₙ = n/2 [2a + (n - 1)d]
+</div>
+
+<div class="formula">
+Also:
+<br><br>
+Sₙ = n/2 (a + l)
+<br><br>
+where l = last term
+</div>
+
+<h3 class="section-title">Last Term</h3>
+
+<div class="formula">
+l = a + (n - 1)d
+</div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- 6 TRIANGLES -->
+<!-- ================================================= -->
+
+<div id="triangles" class="formula-page">
+
+<button onclick="goHome()">⬅ Home</button>
+
+<h2>6. Triangles</h2>
+
+<h3 class="section-title">Similar Triangles</h3>
+
+<div class="formula important">
+Corresponding sides of similar triangles are proportional.
+</div>
+
+<h3 class="section-title">Basic Proportionality Theorem</h3>
+
+<div class="formula">
+If a line is drawn parallel to one side of a triangle,
+it divides the other two sides proportionally.
+</div>
+
+<h3 class="section-title">Pythagoras Theorem</h3>
+
+<div class="formula important">
+Hypotenuse² = Perpendicular² + Base²
+<br><br>
+c² = a² + b²
+</div>
+
+<h3 class="section-title">Area of Similar Triangles</h3>
+
+<div class="formula">
+Area₁ / Area₂
+=
+(Corresponding side₁ / Corresponding side₂)²
+</div>
+
+<h3 class="section-title">Similarity Criteria</h3>
+
+<div class="formula">
+AAA
+<br>
+SSS
+<br>
+SAS
+</div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- 7 COORDINATE -->
+<!-- ================================================= -->
+
+<div id="coordinate" class="formula-page">
+
+<button onclick="goHome()">⬅ Home</button>
+
+<h2>7. Coordinate Geometry</h2>
+
+<h3 class="section-title">Distance Formula</h3>
+
+<div class="formula important">
+Distance =
+√[(x₂-x₁)² + (y₂-y₁)²]
+</div>
+
+<h3 class="section-title">Section Formula</h3>
+
+<div class="formula important">
+If P divides A(x₁,y₁) and B(x₂,y₂)
+in ratio m:n:
+<br><br>
+
+P =
+((mx₂ + nx₁)/(m+n),
+(my₂ + ny₁)/(m+n))
+</div>
+
+<h3 class="section-title">Midpoint Formula</h3>
+
+<div class="formula">
+((x₁+x₂)/2 , (y₁+y₂)/2)
+</div>
+
+<h3 class="section-title">Area of Triangle</h3>
+
+<div class="formula important">
+Area =
+1/2 |x₁(y₂-y₃)
++ x₂(y₃-y₁)
++ x₃(y₁-y₂)|
+</div>
+
+<h3 class="section-title">Collinear Points</h3>
+
+<div class="formula">
+If area of triangle formed by three points = 0,
+then the points are collinear.
+</div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- 8 TRIGONOMETRY -->
+<!-- ================================================= -->
+
+<div id="trigonometry" class="formula-page">
+
+<button onclick="goHome()">⬅ Home</button>
+
+<h2>8. Introduction to Trigonometry</h2>
+
+<h3 class="section-title">Trigonometric Ratios</h3>
+
+<div class="formula important">
+sin θ = Perpendicular / Hypotenuse
+<br><br>
+cos θ = Base / Hypotenuse
+<br><br>
+tan θ = Perpendicular / Base
+<br><br>
+cosec θ = Hypotenuse / Perpendicular
+<br><br>
+sec θ = Hypotenuse / Base
+<br><br>
+cot θ = Base / Perpendicular
+</div>
+
+<h3 class="section-title">Reciprocal Relations</h3>
+
+<div class="formula">
+sin θ = 1/cosec θ
+<br>
+cos θ = 1/sec θ
+<br>
+tan θ = 1/cot θ
+</div>
+
+<div class="formula">
+cosec θ = 1/sin θ
+<br>
+sec θ = 1/cos θ
+<br>
+cot θ = 1/tan θ
+</div>
+
+<h3 class="section-title">Important Identities</h3>
+
+<div class="formula important">
+sin²θ + cos²θ = 1
+</div>
+
+<div class="formula important">
+1 + tan²θ = sec²θ
+</div>
+
+<div class="formula important">
+1 + cot²θ = cosec²θ
+</div>
+
+<h3 class="section-title">Other Relations</h3>
+
+<div class="formula">
+tan θ = sin θ / cos θ
+<br><br>
+cot θ = cos θ / sin θ
+</div>
+
+<h3 class="section-title">Standard Values</h3>
+
+<div class="formula">
+
+<table style="width:100%;text-align:center;border-collapse:collapse;">
+
+<tr>
+<th>θ</th>
+<th>0°</th>
+<th>30°</th>
+<th>45°</th>
+<th>60°</th>
+<th>90°</th>
+</tr>
+
+<tr>
+<td>sin θ</td>
+<td>0</td>
+<td>1/2</td>
+<td>1/√2</td>
+<td>√3/2</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>cos θ</td>
+<td>1</td>
+<td>√3/2</td>
+<td>1/√2</td>
+<td>1/2</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>tan θ</td>
+<td>0</td>
+<td>1/√3</td>
+<td>1</td>
+<td>√3</td>
+<td>Not defined</td>
+</tr>
+
+<tr>
+<td>cosec θ</td>
+<td>Not defined</td>
+<td>2</td>
+<td>√2</td>
+<td>2/√3</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>sec θ</td>
+<td>1</td>
+<td>2/√3</td>
+<td>√2</td>
+<td>2</td>
+<td>Not defined</td>
+</tr>
+
+<tr>
+<td>cot θ</td>
+<td>Not defined</td>
+<td>√3</td>
+<td>1</td>
+<td>1/√3</td>
+<td>0</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- 9 APPLICATIONS -->
+<!-- ================================================= -->
+
+<div id="applications" class="formula-page">
+
+<button onclick="goHome()">⬅ Home</button>
+
+<h2>9. Some Applications of Trigonometry</h2>
+
+<h3 class="section-title">Basic Relations</h3>
+
+<div class="formula">
+tan θ = Height / Distance
+</div>
+
+<div class="formula">
+Height = Distance × tan θ
+</div>
+
+<div class="formula">
+Distance = Height / tan θ
+</div>
+
+<div class="formula">
+sin θ = Height / Hypotenuse
+</div>
+
+<div class="formula">
+cos θ = Distance / Hypotenuse
+</div>
+
+<h3 class="section-title">Important Terms</h3>
+
+<div class="formula">
+<strong>Angle of Elevation:</strong>
+Object is above the observer's horizontal line.
+</div>
+
+<div class="formula">
+<strong>Angle of Depression:</strong>
+Object is below the observer's horizontal line.
+</div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- 10 CIRCLES -->
+<!-- ================================================= -->
+
+<div id="circles" class="formula-page">
+
+<button onclick="goHome()">⬅ Home</button>
+
+<h2>10. Circles</h2>
+
+<h3 class="section-title">Tangent</h3>
+
+<div class="formula important">
+The tangent at any point of a circle
+is perpendicular to the radius through the point of contact.
+</div>
+
+<h3 class="section-title">Tangents from External Point</h3>
+
+<div class="formula important">
+The lengths of tangents drawn from an external point
+to a circle are equal.
+</div>
+
+<div class="formula">
+If PA and PB are tangents:
+<br><br>
+PA = PB
+</div>
+
+<h3 class="section-title">Radius and Tangent</h3>
+
+<div class="formula">
+Radius ⟂ Tangent at point of contact.
+</div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- 11 AREAS -->
+<!-- ================================================= -->
+
+<div id="areas" class="formula-page">
+
+<button onclick="goHome()">⬅ Home</button>
+
+<h2>11. Areas Related to Circles</h2>
+
+<h3 class="section-title">Circle</h3>
+
+<div class="formula important">
+Circumference = 2πr
+</div>
+
+<div class="formula important">
+Area = πr²
+</div>
+
+<div class="formula">
+Diameter = 2r
+</div>
+
+<div class="formula">
+r = d/2
+</div>
+
+<h3 class="section-title">Semicircle</h3>
+
+<div class="formula">
+Area = 1/2 πr²
+</div>
+
+<div class="formula">
+Curved Surface Length = πr
+</div>
+
+<h3 class="section-title">Sector</h3>
+
+<div class="formula important">
+Area of sector =
+θ/360 × πr²
+</div>
+
+<div class="formula important">
+Length of arc =
+θ/360 × 2πr
+</div>
+
+<h3 class="section-title">Segment</h3>
+
+<div class="formula">
+Area of segment =
+Area of sector - Area of triangle
+</div>
+
+<h3 class="section-title">π</h3>
+
+<div class="formula">
+π = 22/7
+<br>
+or approximately 3.14159
+</div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- 12 SURFACE AREA & VOLUME -->
+<!-- ================================================= -->
+
+<div id="surface" class="formula-page">
+
+<button onclick="goHome()">⬅ Home</button>
+
+<h2>12. Surface Areas and Volumes</h2>
+
+<h3 class="section-title">Cuboid</h3>
+
+<div class="formula">
+Volume = lbh
+</div>
+
+<div class="formula">
+TSA = 2(lb + bh + hl)
+</div>
+
+<div class="formula">
+LSA = 2h(l+b)
+</div>
+
+<h3 class="section-title">Cube</h3>
+
+<div class="formula">
+Volume = a³
+</div>
+
+<div class="formula">
+TSA = 6a²
+</div>
+
+<div class="formula">
+LSA = 4a²
+</div>
+
+<h3 class="section-title">Cylinder</h3>
+
+<div class="formula">
+Volume = πr²h
+</div>
+
+<div class="formula">
+CSA = 2πrh
+</div>
+
+<div class="formula">
+TSA = 2πr(h+r)
+</div>
+
+<h3 class="section-title">Cone</h3>
+
+<div class="formula">
+Volume = 1/3 πr²h
+</div>
+
+<div class="formula">
+Slant height:
+<br>
+l = √(r²+h²)
+</div>
+
+<div class="formula">
+CSA = πrl
+</div>
+
+<div class="formula">
+TSA = πr(l+r)
+</div>
+
+<h3 class="section-title">Sphere</h3>
+
+<div class="formula">
+Volume = 4/3 πr³
+</div>
+
+<div class="formula">
+Surface Area = 4πr²
+</div>
+
+<h3 class="section-title">Hemisphere</h3>
+
+<div class="formula">
+Volume = 2/3 πr³
+</div>
+
+<div class="formula">
+CSA = 2πr²
+</div>
+
+<div class="formula">
+TSA = 3πr²
+</div>
+
+<h3 class="section-title">Combination of Solids</h3>
+
+<div class="formula important">
+Total Volume = Sum/Difference of individual volumes
+</div>
+
+<div class="formula">
+Total Surface Area = Only exposed surfaces are added.
+</div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- 13 STATISTICS -->
+<!-- ================================================= -->
+
+<div id="statistics" class="formula-page">
+
+<button onclick="goHome()">⬅ Home</button>
+
+<h2>13. Statistics</h2>
+
+<h3 class="section-title">Mean</h3>
+
+<div class="formula">
+For ungrouped data:
+<br><br>
+Mean = Σx / n
+</div>
+
+<div class="formula">
+For frequency distribution:
+<br><br>
+Mean = Σfx / Σf
+</div>
+
+<h3 class="section-title">Assumed Mean Method</h3>
+
+<div class="formula">
+Mean = a + (Σfd / Σf)
+</div>
+
+<h3 class="section-title">Step Deviation Method</h3>
+
+<div class="formula">
+Mean = a + h(Σfu / Σf)
+</div>
+
+<h3 class="section-title">Median</h3>
+
+<div class="formula important">
+Median =
+l + [(n/2 - cf)/f] × h
+</div>
+
+<h3 class="section-title">Mode</h3>
+
+<div class="formula important">
+Mode =
+l + [(f₁-f₀)/(2f₁-f₀-f₂)] × h
+</div>
+
+<h3 class="section-title">Empirical Relation</h3>
+
+<div class="formula important">
+Mode = 3 Median - 2 Mean
+</div>
+
+<div class="formula">
+Here:
+<br>
+l = lower boundary of median/modal class
+<br>
+h = class size
+<br>
+f = frequency of median class
+<br>
+cf = cumulative frequency before median class
+</div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- 14 PROBABILITY -->
+<!-- ================================================= -->
+
+<div id="probability" class="formula-page">
+
+<button onclick="goHome()">⬅ Home</button>
+
+<h2>14. Probability</h2>
+
+<h3 class="section-title">Probability Formula</h3>
+
+<div class="formula important">
+P(E) =
+Number of favourable outcomes /
+Total number of equally likely outcomes
+</div>
+
+<h3 class="section-title">Range of Probability</h3>
+
+<div class="formula important">
+0 ≤ P(E) ≤ 1
+</div>
+
+<h3 class="section-title">Impossible Event</h3>
+
+<div class="formula">
+P(impossible event) = 0
+</div>
+
+<h3 class="section-title">Sure Event</h3>
+
+<div class="formula">
+P(sure event) = 1
+</div>
+
+<h3 class="section-title">Complementary Event</h3>
+
+<div class="formula important">
+P(not E) = 1 - P(E)
+</div>
+
+<div class="formula">
+P(E) + P(not E) = 1
+</div>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+<p>📚 Class 10 Maths Formula Book</p>
+<p>Basic + Important Formulas</p>
+
+</footer>
+
+
+<script>
+
+function showChapter(id){
+
+    document.getElementById("chapterList").style.display="none";
+
+    document.getElementById("search").style.display="none";
+
+    let pages=document.querySelectorAll(".formula-page");
+
+    pages.forEach(function(page){
+        page.style.display="none";
+    });
+
+    document.getElementById(id).style.display="block";
+
+    window.scrollTo(0,0);
+}
+
+
+function goHome(){
+
+    let pages=document.querySelectorAll(".formula-page");
+
+    pages.forEach(function(page){
+        page.style.display="none";
+    });
+
+    document.getElementById("chapterList").style.display="grid";
+
+    document.getElementById("search").style.display="block";
+
+    document.getElementById("search").value="";
+
+    let chapters=document.querySelectorAll(".chapter");
+
+    chapters.forEach(function(chapter){
+        chapter.style.display="block";
+    });
+
+    window.scrollTo(0,0);
+}
+
+
+function searchChapter(){
+
+    let input=document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    let chapters=document.querySelectorAll(".chapter");
+
+    chapters.forEach(function(chapter){
+
+        let text=chapter.innerText.toLowerCase();
+
+        if(text.includes(input)){
+            chapter.style.display="block";
+        }
+        else{
+            chapter.style.display="none";
+        }
+
+    });
+
+}
+
+</script>
 
 </body>
 </html>

@@ -1,18 +1,17 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Class 10 Maths Formula Book</title>
+<title>Class 11 Maths Formula Book</title>
 
 <style>
-
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 body{
@@ -21,7 +20,7 @@ body{
 }
 
 header{
-    background:linear-gradient(135deg,#141e30,#243b55);
+    background:linear-gradient(135deg,#111827,#2563eb);
     color:white;
     text-align:center;
     padding:30px 15px;
@@ -29,7 +28,7 @@ header{
 
 header h1{
     font-size:34px;
-    margin-bottom:10px;
+    margin-bottom:8px;
 }
 
 header p{
@@ -56,7 +55,7 @@ header p{
 .chapter-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+    gap:18px;
 }
 
 .chapter{
@@ -69,17 +68,18 @@ header p{
 }
 
 .chapter:hover{
-    transform:translateY(-6px);
+    transform:translateY(-5px);
     box-shadow:0 8px 20px #aaa;
 }
 
 .chapter h3{
-    color:#243b55;
-    margin-bottom:10px;
+    color:#1d4ed8;
+    margin-bottom:8px;
 }
 
 .chapter p{
     color:#666;
+    line-height:1.5;
 }
 
 .formula-page{
@@ -91,35 +91,51 @@ header p{
 }
 
 .formula-page h2{
-    color:#243b55;
+    color:#1d4ed8;
     margin-bottom:20px;
 }
 
 .section-title{
     margin-top:25px;
     margin-bottom:12px;
-    color:#141e30;
-    border-bottom:2px solid #243b55;
     padding-bottom:7px;
+    border-bottom:2px solid #2563eb;
+    color:#111827;
 }
 
 .formula{
-    background:#f4f7fb;
-    border-left:5px solid #243b55;
+    background:#f5f8ff;
+    border-left:5px solid #2563eb;
     padding:15px;
     margin:12px 0;
     border-radius:7px;
+    line-height:1.7;
     font-size:17px;
-    line-height:1.6;
 }
 
 .important{
-    background:#fff8df;
-    border-left:5px solid #e0a800;
+    background:#fff8dc;
+    border-left-color:#eab308;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+}
+
+th,td{
+    border:1px solid #bbb;
+    padding:10px;
+    text-align:center;
+}
+
+th{
+    background:#e5e7eb;
 }
 
 button{
-    background:#243b55;
+    background:#1d4ed8;
     color:white;
     border:none;
     padding:12px 20px;
@@ -130,21 +146,24 @@ button{
 }
 
 button:hover{
-    background:#141e30;
+    background:#1e3a8a;
+}
+
+.home-btn{
+    margin-right:10px;
 }
 
 footer{
     margin-top:30px;
-    padding:25px;
-    text-align:center;
-    background:#141e30;
+    background:#111827;
     color:white;
+    text-align:center;
+    padding:25px;
 }
 
 @media(max-width:600px){
-
     header h1{
-        font-size:26px;
+        font-size:25px;
     }
 
     .container{
@@ -153,518 +172,304 @@ footer{
 
     .formula{
         font-size:15px;
+        overflow-x:auto;
     }
 
+    table{
+        font-size:13px;
+    }
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-
-<h1>📚 Class 10 Maths Formula Book</h1>
-
-<p>Basic + Important + Exam Formulas</p>
-
+<h1>📚 Class 11 Mathematics Formula Book</h1>
+<p>Basic + Important + Exam-Use Formulas</p>
 </header>
-
 
 <div class="container">
 
 <input
-type="text"
 id="search"
 class="search"
-placeholder="🔍 Search chapter or formula..."
+type="text"
+placeholder="🔍 Search chapter..."
 onkeyup="searchChapter()"
 >
 
-
-<!-- ================= CHAPTER LIST ================= -->
+<!-- ================= CHAPTERS ================= -->
 
 <div id="chapterList" class="chapter-grid">
 
-<div class="chapter" onclick="showChapter('real')">
-<h3>1. Real Numbers</h3>
-<p>Euclid Algorithm, HCF, LCM, irrational numbers</p>
+<div class="chapter" onclick="showChapter('sets')">
+<h3>1. Sets</h3>
+<p>Sets, subsets, union, intersection, complement and intervals</p>
 </div>
 
-<div class="chapter" onclick="showChapter('polynomial')">
-<h3>2. Polynomials</h3>
-<p>Zeroes, coefficients, quadratic polynomial</p>
-</div>
-
-<div class="chapter" onclick="showChapter('linear')">
-<h3>3. Pair of Linear Equations</h3>
-<p>Conditions, graphical and algebraic methods</p>
-</div>
-
-<div class="chapter" onclick="showChapter('quadratic')">
-<h3>4. Quadratic Equations</h3>
-<p>Roots, discriminant, quadratic formula</p>
-</div>
-
-<div class="chapter" onclick="showChapter('ap')">
-<h3>5. Arithmetic Progressions</h3>
-<p>nth term and sum formulas</p>
-</div>
-
-<div class="chapter" onclick="showChapter('triangles')">
-<h3>6. Triangles</h3>
-<p>Similarity, BPT, Pythagoras theorem</p>
-</div>
-
-<div class="chapter" onclick="showChapter('coordinate')">
-<h3>7. Coordinate Geometry</h3>
-<p>Distance, section formula, area</p>
+<div class="chapter" onclick="showChapter('relations')">
+<h3>2. Relations & Functions</h3>
+<p>Relations, functions, domain, range and composition</p>
 </div>
 
 <div class="chapter" onclick="showChapter('trigonometry')">
-<h3>8. Introduction to Trigonometry</h3>
-<p>Ratios, identities, standard values</p>
+<h3>3. Trigonometric Functions</h3>
+<p>Identities, ratios, transformations and equations</p>
 </div>
 
-<div class="chapter" onclick="showChapter('applications')">
-<h3>9. Applications of Trigonometry</h3>
-<p>Heights and distances</p>
+<div class="chapter" onclick="showChapter('complex')">
+<h3>4. Complex Numbers & Quadratic Equations</h3>
+<p>Complex numbers, conjugates, modulus and roots</p>
 </div>
 
-<div class="chapter" onclick="showChapter('circles')">
-<h3>10. Circles</h3>
-<p>Tangents and important theorems</p>
+<div class="chapter" onclick="showChapter('inequalities')">
+<h3>5. Linear Inequalities</h3>
+<p>Rules and solution of inequalities</p>
 </div>
 
-<div class="chapter" onclick="showChapter('areas')">
-<h3>11. Areas Related to Circles</h3>
-<p>Circle, sector, segment</p>
+<div class="chapter" onclick="showChapter('pnc')">
+<h3>6. Permutations & Combinations</h3>
+<p>Factorial, permutation and combination formulas</p>
 </div>
 
-<div class="chapter" onclick="showChapter('surface')">
-<h3>12. Surface Areas & Volumes</h3>
-<p>Cube, cuboid, cylinder, cone, sphere</p>
+<div class="chapter" onclick="showChapter('binomial')">
+<h3>7. Binomial Theorem</h3>
+<p>Expansion, general term and middle terms</p>
+</div>
+
+<div class="chapter" onclick="showChapter('sequence')">
+<h3>8. Sequence & Series</h3>
+<p>AP, GP and standard sums</p>
+</div>
+
+<div class="chapter" onclick="showChapter('straight')">
+<h3>9. Straight Lines</h3>
+<p>Slope, equations, distance and angles</p>
+</div>
+
+<div class="chapter" onclick="showChapter('conic')">
+<h3>10. Conic Sections</h3>
+<p>Circle, parabola, ellipse and hyperbola</p>
+</div>
+
+<div class="chapter" onclick="showChapter('threeD')">
+<h3>11. Introduction to 3D Geometry</h3>
+<p>Coordinates and distance in 3D</p>
+</div>
+
+<div class="chapter" onclick="showChapter('limits')">
+<h3>12. Limits & Derivatives</h3>
+<p>Limits, derivatives and standard results</p>
 </div>
 
 <div class="chapter" onclick="showChapter('statistics')">
 <h3>13. Statistics</h3>
-<p>Mean, median, mode</p>
+<p>Mean, deviation and variance</p>
 </div>
 
 <div class="chapter" onclick="showChapter('probability')">
 <h3>14. Probability</h3>
-<p>Probability and complementary events</p>
+<p>Events, probability and laws</p>
 </div>
 
 </div>
 
 
-<!-- ================================================= -->
-<!-- 1 REAL NUMBERS -->
-<!-- ================================================= -->
+<!-- =====================================================
+1. SETS
+===================================================== -->
 
-<div id="real" class="formula-page">
+<div id="sets" class="formula-page">
 
 <button onclick="goHome()">⬅ Home</button>
 
-<h2>1. Real Numbers</h2>
+<h2>1. Sets</h2>
 
-<h3 class="section-title">Euclid's Division Lemma</h3>
+<h3 class="section-title">Basic Notation</h3>
+
+<div class="formula">
+A = {x : x satisfies a condition}
+</div>
+
+<div class="formula">
+x ∈ A → x belongs to A
+<br>
+x ∉ A → x does not belong to A
+</div>
+
+<h3 class="section-title">Subset</h3>
 
 <div class="formula important">
-a = bq + r
-<br>
-where 0 ≤ r < b
-</div>
-
-<h3 class="section-title">HCF and LCM</h3>
-
-<div class="formula">
-For two positive integers a and b:
-<br><br>
-<strong>HCF(a,b) × LCM(a,b) = a × b</strong>
-</div>
-
-<h3 class="section-title">Prime Factorisation</h3>
-
-<div class="formula">
-If
-<br>
-a = p₁ᵃ × p₂ᵇ × p₃ᶜ ...
-<br><br>
-then prime factorisation can be used to find HCF and LCM.
+A ⊆ B means every element of A belongs to B.
 </div>
 
 <div class="formula">
-<strong>HCF:</strong> Take the smallest powers of common prime factors.
+Number of subsets of a set containing n elements:
 <br><br>
-<strong>LCM:</strong> Take the greatest powers of all prime factors.
+<strong>2ⁿ</strong>
 </div>
 
-<h3 class="section-title">Important Result</h3>
+<div class="formula">
+Number of proper subsets:
+<br><br>
+<strong>2ⁿ - 1</strong>
+</div>
+
+<h3 class="section-title">Union and Intersection</h3>
+
+<div class="formula">
+A ∪ B = elements in A or B or both
+</div>
+
+<div class="formula">
+A ∩ B = elements common to A and B
+</div>
+
+<div class="formula">
+A - B = elements in A but not in B
+</div>
+
+<h3 class="section-title">Complement</h3>
+
+<div class="formula">
+A' = U - A
+</div>
+
+<h3 class="section-title">De Morgan's Laws</h3>
 
 <div class="formula important">
-If p is a prime number and p divides a²,
-then p divides a.
-</div>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- 2 POLYNOMIALS -->
-<!-- ================================================= -->
-
-<div id="polynomial" class="formula-page">
-
-<button onclick="goHome()">⬅ Home</button>
-
-<h2>2. Polynomials</h2>
-
-<h3 class="section-title">Quadratic Polynomial</h3>
-
-<div class="formula">
-For polynomial:
+(A ∪ B)' = A' ∩ B'
 <br><br>
-ax² + bx + c
-<br><br>
-where a ≠ 0
+(A ∩ B)' = A' ∪ B'
 </div>
 
-<h3 class="section-title">Zeroes</h3>
+<h3 class="section-title">Number of Elements</h3>
 
 <div class="formula important">
-If α and β are zeroes of ax² + bx + c:
-<br><br>
-α + β = -b/a
-<br><br>
-αβ = c/a
-</div>
-
-<h3 class="section-title">Polynomial from Zeroes</h3>
-
-<div class="formula">
-If α and β are zeroes:
-<br><br>
-x² - (α + β)x + αβ
-</div>
-
-<div class="formula">
-General quadratic polynomial:
-<br><br>
-a[x² - (α + β)x + αβ]
-</div>
-
-<h3 class="section-title">Division Algorithm</h3>
-
-<div class="formula">
-Dividend = Divisor × Quotient + Remainder
-</div>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- 3 LINEAR EQUATIONS -->
-<!-- ================================================= -->
-
-<div id="linear" class="formula-page">
-
-<button onclick="goHome()">⬅ Home</button>
-
-<h2>3. Pair of Linear Equations in Two Variables</h2>
-
-<h3 class="section-title">General Form</h3>
-
-<div class="formula">
-a₁x + b₁y + c₁ = 0
-<br><br>
-a₂x + b₂y + c₂ = 0
-</div>
-
-<h3 class="section-title">Number of Solutions</h3>
-
-<div class="formula important">
-<strong>Unique solution:</strong>
-<br>
-a₁/a₂ ≠ b₁/b₂
-</div>
-
-<div class="formula">
-<strong>No solution:</strong>
-<br>
-a₁/a₂ = b₁/b₂ ≠ c₁/c₂
-</div>
-
-<div class="formula">
-<strong>Infinitely many solutions:</strong>
-<br>
-a₁/a₂ = b₁/b₂ = c₁/c₂
-</div>
-
-<h3 class="section-title">Cross Multiplication</h3>
-
-<div class="formula">
-x/(b₁c₂ - b₂c₁)
+n(A ∪ B)
 =
-y/(c₁a₂ - c₂a₁)
-=
-1/(a₁b₂ - a₂b₁)
+n(A) + n(B) - n(A ∩ B)
 </div>
-
-<h3 class="section-title">Substitution</h3>
 
 <div class="formula">
-Find one variable in terms of another
-and substitute into the second equation.
+n(A') = n(U) - n(A)
 </div>
-
-<h3 class="section-title">Elimination</h3>
 
 <div class="formula">
-Multiply equations so that the coefficient
-of one variable becomes equal and eliminate it.
+If A and B are disjoint:
+<br>
+n(A ∪ B) = n(A) + n(B)
 </div>
 
 </div>
 
 
-<!-- ================================================= -->
-<!-- 4 QUADRATIC -->
-<!-- ================================================= -->
+<!-- =====================================================
+2. RELATIONS FUNCTIONS
+===================================================== -->
 
-<div id="quadratic" class="formula-page">
+<div id="relations" class="formula-page">
 
 <button onclick="goHome()">⬅ Home</button>
 
-<h2>4. Quadratic Equations</h2>
+<h2>2. Relations & Functions</h2>
 
-<h3 class="section-title">Standard Form</h3>
+<h3 class="section-title">Cartesian Product</h3>
+
+<div class="formula">
+A × B = {(a,b) : a ∈ A, b ∈ B}
+</div>
+
+<div class="formula">
+If n(A)=m and n(B)=n:
+<br><br>
+n(A × B) = mn
+</div>
+
+<h3 class="section-title">Relation</h3>
+
+<div class="formula">
+A relation R from A to B is a subset of A × B.
+</div>
+
+<h3 class="section-title">Function</h3>
 
 <div class="formula important">
-ax² + bx + c = 0
+Every element of the domain has exactly one image.
+</div>
+
+<div class="formula">
+f : A → B
+</div>
+
+<h3 class="section-title">Composition</h3>
+
+<div class="formula">
+(f ∘ g)(x) = f(g(x))
+</div>
+
+<div class="formula">
+(g ∘ f)(x) = g(f(x))
+</div>
+
+<h3 class="section-title">Standard Functions</h3>
+
+<div class="formula">
+Identity function:
 <br>
-a ≠ 0
-</div>
-
-<h3 class="section-title">Quadratic Formula</h3>
-
-<div class="formula important">
-x = (-b ± √(b² - 4ac)) / 2a
-</div>
-
-<h3 class="section-title">Discriminant</h3>
-
-<div class="formula">
-D = b² - 4ac
+f(x)=x
 </div>
 
 <div class="formula">
-D > 0 → Two distinct real roots
-<br><br>
-D = 0 → Two equal real roots
-<br><br>
-D < 0 → No real roots
-</div>
-
-<h3 class="section-title">Sum and Product of Roots</h3>
-
-<div class="formula">
-α + β = -b/a
-<br><br>
-αβ = c/a
-</div>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- 5 AP -->
-<!-- ================================================= -->
-
-<div id="ap" class="formula-page">
-
-<button onclick="goHome()">⬅ Home</button>
-
-<h2>5. Arithmetic Progressions</h2>
-
-<h3 class="section-title">Basic Form</h3>
-
-<div class="formula">
-a, a+d, a+2d, a+3d, ...
-</div>
-
-<div class="formula">
-<strong>a</strong> = first term
+Constant function:
 <br>
-<strong>d</strong> = common difference
-</div>
-
-<h3 class="section-title">Common Difference</h3>
-
-<div class="formula important">
-d = second term - first term
-</div>
-
-<h3 class="section-title">nth Term</h3>
-
-<div class="formula important">
-aₙ = a + (n - 1)d
-</div>
-
-<h3 class="section-title">Sum of n Terms</h3>
-
-<div class="formula important">
-Sₙ = n/2 [2a + (n - 1)d]
+f(x)=c
 </div>
 
 <div class="formula">
-Also:
-<br><br>
-Sₙ = n/2 (a + l)
-<br><br>
-where l = last term
-</div>
-
-<h3 class="section-title">Last Term</h3>
-
-<div class="formula">
-l = a + (n - 1)d
-</div>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- 6 TRIANGLES -->
-<!-- ================================================= -->
-
-<div id="triangles" class="formula-page">
-
-<button onclick="goHome()">⬅ Home</button>
-
-<h2>6. Triangles</h2>
-
-<h3 class="section-title">Similar Triangles</h3>
-
-<div class="formula important">
-Corresponding sides of similar triangles are proportional.
-</div>
-
-<h3 class="section-title">Basic Proportionality Theorem</h3>
-
-<div class="formula">
-If a line is drawn parallel to one side of a triangle,
-it divides the other two sides proportionally.
-</div>
-
-<h3 class="section-title">Pythagoras Theorem</h3>
-
-<div class="formula important">
-Hypotenuse² = Perpendicular² + Base²
-<br><br>
-c² = a² + b²
-</div>
-
-<h3 class="section-title">Area of Similar Triangles</h3>
-
-<div class="formula">
-Area₁ / Area₂
-=
-(Corresponding side₁ / Corresponding side₂)²
-</div>
-
-<h3 class="section-title">Similarity Criteria</h3>
-
-<div class="formula">
-AAA
+Modulus function:
 <br>
-SSS
+f(x)=|x|
+</div>
+
+<div class="formula">
+Signum function:
 <br>
-SAS
+sgn(x)=1 if x>0
+<br>
+sgn(x)=0 if x=0
+<br>
+sgn(x)=-1 if x<0
 </div>
 
 </div>
 
 
-<!-- ================================================= -->
-<!-- 7 COORDINATE -->
-<!-- ================================================= -->
-
-<div id="coordinate" class="formula-page">
-
-<button onclick="goHome()">⬅ Home</button>
-
-<h2>7. Coordinate Geometry</h2>
-
-<h3 class="section-title">Distance Formula</h3>
-
-<div class="formula important">
-Distance =
-√[(x₂-x₁)² + (y₂-y₁)²]
-</div>
-
-<h3 class="section-title">Section Formula</h3>
-
-<div class="formula important">
-If P divides A(x₁,y₁) and B(x₂,y₂)
-in ratio m:n:
-<br><br>
-
-P =
-((mx₂ + nx₁)/(m+n),
-(my₂ + ny₁)/(m+n))
-</div>
-
-<h3 class="section-title">Midpoint Formula</h3>
-
-<div class="formula">
-((x₁+x₂)/2 , (y₁+y₂)/2)
-</div>
-
-<h3 class="section-title">Area of Triangle</h3>
-
-<div class="formula important">
-Area =
-1/2 |x₁(y₂-y₃)
-+ x₂(y₃-y₁)
-+ x₃(y₁-y₂)|
-</div>
-
-<h3 class="section-title">Collinear Points</h3>
-
-<div class="formula">
-If area of triangle formed by three points = 0,
-then the points are collinear.
-</div>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- 8 TRIGONOMETRY -->
-<!-- ================================================= -->
+<!-- =====================================================
+3 TRIGONOMETRY
+===================================================== -->
 
 <div id="trigonometry" class="formula-page">
 
 <button onclick="goHome()">⬅ Home</button>
 
-<h2>8. Introduction to Trigonometry</h2>
+<h2>3. Trigonometric Functions</h2>
 
-<h3 class="section-title">Trigonometric Ratios</h3>
+<h3 class="section-title">Basic Ratios</h3>
 
 <div class="formula important">
-sin θ = Perpendicular / Hypotenuse
-<br><br>
-cos θ = Base / Hypotenuse
-<br><br>
-tan θ = Perpendicular / Base
-<br><br>
-cosec θ = Hypotenuse / Perpendicular
-<br><br>
-sec θ = Hypotenuse / Base
-<br><br>
-cot θ = Base / Perpendicular
+sin θ = P/H
+<br>
+cos θ = B/H
+<br>
+tan θ = P/B
+<br>
+cosec θ = H/P
+<br>
+sec θ = H/B
+<br>
+cot θ = B/P
 </div>
 
 <h3 class="section-title">Reciprocal Relations</h3>
@@ -677,42 +482,129 @@ cos θ = 1/sec θ
 tan θ = 1/cot θ
 </div>
 
-<div class="formula">
-cosec θ = 1/sin θ
-<br>
-sec θ = 1/cos θ
-<br>
-cot θ = 1/tan θ
-</div>
-
-<h3 class="section-title">Important Identities</h3>
+<h3 class="section-title">Fundamental Identities</h3>
 
 <div class="formula important">
 sin²θ + cos²θ = 1
-</div>
-
-<div class="formula important">
+<br><br>
 1 + tan²θ = sec²θ
-</div>
-
-<div class="formula important">
+<br><br>
 1 + cot²θ = cosec²θ
 </div>
 
-<h3 class="section-title">Other Relations</h3>
+<h3 class="section-title">Related Identities</h3>
 
 <div class="formula">
-tan θ = sin θ / cos θ
+tan θ = sin θ/cos θ
+<br>
+cot θ = cos θ/sin θ
+</div>
+
+<h3 class="section-title">Negative Angles</h3>
+
+<div class="formula">
+sin(-θ) = -sinθ
+<br>
+cos(-θ) = cosθ
+<br>
+tan(-θ) = -tanθ
+</div>
+
+<h3 class="section-title">Compound Angles</h3>
+
+<div class="formula important">
+sin(A+B)=sinA cosB + cosA sinB
 <br><br>
-cot θ = cos θ / sin θ
+sin(A-B)=sinA cosB - cosA sinB
+</div>
+
+<div class="formula important">
+cos(A+B)=cosA cosB - sinA sinB
+<br><br>
+cos(A-B)=cosA cosB + sinA sinB
+</div>
+
+<div class="formula important">
+tan(A+B)
+=
+(tanA+tanB)/(1-tanA tanB)
+</div>
+
+<div class="formula">
+tan(A-B)
+=
+(tanA-tanB)/(1+tanA tanB)
+</div>
+
+<h3 class="section-title">Double Angle</h3>
+
+<div class="formula important">
+sin2A = 2sinA cosA
+</div>
+
+<div class="formula">
+cos2A = cos²A - sin²A
+<br>
+= 2cos²A - 1
+<br>
+= 1 - 2sin²A
+</div>
+
+<div class="formula">
+tan2A = 2tanA/(1-tan²A)
+</div>
+
+<h3 class="section-title">Half Angle</h3>
+
+<div class="formula">
+sin²(A/2) = (1-cosA)/2
+</div>
+
+<div class="formula">
+cos²(A/2) = (1+cosA)/2
+</div>
+
+<h3 class="section-title">Sum to Product</h3>
+
+<div class="formula">
+sinA + sinB
+=
+2sin((A+B)/2)cos((A-B)/2)
+</div>
+
+<div class="formula">
+sinA - sinB
+=
+2cos((A+B)/2)sin((A-B)/2)
+</div>
+
+<div class="formula">
+cosA + cosB
+=
+2cos((A+B)/2)cos((A-B)/2)
+</div>
+
+<div class="formula">
+cosA - cosB
+=
+-2sin((A+B)/2)sin((A-B)/2)
+</div>
+
+<h3 class="section-title">Degree and Radian</h3>
+
+<div class="formula important">
+180° = π radians
+<br><br>
+1° = π/180 radians
+<br><br>
+1 radian = 180°/π
 </div>
 
 <h3 class="section-title">Standard Values</h3>
 
 <div class="formula">
 
-<table style="width:100%;text-align:center;border-collapse:collapse;">
-
+<table>
 <tr>
 <th>θ</th>
 <th>0°</th>
@@ -723,7 +615,7 @@ cot θ = cos θ / sin θ
 </tr>
 
 <tr>
-<td>sin θ</td>
+<td>sinθ</td>
 <td>0</td>
 <td>1/2</td>
 <td>1/√2</td>
@@ -732,7 +624,7 @@ cot θ = cos θ / sin θ
 </tr>
 
 <tr>
-<td>cos θ</td>
+<td>cosθ</td>
 <td>1</td>
 <td>√3/2</td>
 <td>1/√2</td>
@@ -741,17 +633,17 @@ cot θ = cos θ / sin θ
 </tr>
 
 <tr>
-<td>tan θ</td>
+<td>tanθ</td>
 <td>0</td>
 <td>1/√3</td>
 <td>1</td>
 <td>√3</td>
-<td>Not defined</td>
+<td>undefined</td>
 </tr>
 
 <tr>
-<td>cosec θ</td>
-<td>Not defined</td>
+<td>cosecθ</td>
+<td>undefined</td>
 <td>2</td>
 <td>√2</td>
 <td>2/√3</td>
@@ -759,23 +651,22 @@ cot θ = cos θ / sin θ
 </tr>
 
 <tr>
-<td>sec θ</td>
+<td>secθ</td>
 <td>1</td>
 <td>2/√3</td>
 <td>√2</td>
 <td>2</td>
-<td>Not defined</td>
+<td>undefined</td>
 </tr>
 
 <tr>
-<td>cot θ</td>
-<td>Not defined</td>
+<td>cotθ</td>
+<td>undefined</td>
 <td>√3</td>
 <td>1</td>
 <td>1/√3</td>
 <td>0</td>
 </tr>
-
 </table>
 
 </div>
@@ -783,272 +674,671 @@ cot θ = cos θ / sin θ
 </div>
 
 
-<!-- ================================================= -->
-<!-- 9 APPLICATIONS -->
-<!-- ================================================= -->
+<!-- =====================================================
+4 COMPLEX NUMBERS
+===================================================== -->
 
-<div id="applications" class="formula-page">
-
-<button onclick="goHome()">⬅ Home</button>
-
-<h2>9. Some Applications of Trigonometry</h2>
-
-<h3 class="section-title">Basic Relations</h3>
-
-<div class="formula">
-tan θ = Height / Distance
-</div>
-
-<div class="formula">
-Height = Distance × tan θ
-</div>
-
-<div class="formula">
-Distance = Height / tan θ
-</div>
-
-<div class="formula">
-sin θ = Height / Hypotenuse
-</div>
-
-<div class="formula">
-cos θ = Distance / Hypotenuse
-</div>
-
-<h3 class="section-title">Important Terms</h3>
-
-<div class="formula">
-<strong>Angle of Elevation:</strong>
-Object is above the observer's horizontal line.
-</div>
-
-<div class="formula">
-<strong>Angle of Depression:</strong>
-Object is below the observer's horizontal line.
-</div>
-
-</div>
-
-
-<!-- ================================================= -->
-<!-- 10 CIRCLES -->
-<!-- ================================================= -->
-
-<div id="circles" class="formula-page">
+<div id="complex" class="formula-page">
 
 <button onclick="goHome()">⬅ Home</button>
 
-<h2>10. Circles</h2>
+<h2>4. Complex Numbers & Quadratic Equations</h2>
 
-<h3 class="section-title">Tangent</h3>
-
-<div class="formula important">
-The tangent at any point of a circle
-is perpendicular to the radius through the point of contact.
-</div>
-
-<h3 class="section-title">Tangents from External Point</h3>
+<h3 class="section-title">Imaginary Unit</h3>
 
 <div class="formula important">
-The lengths of tangents drawn from an external point
-to a circle are equal.
-</div>
-
-<div class="formula">
-If PA and PB are tangents:
+i = √(-1)
 <br><br>
-PA = PB
+i² = -1
 </div>
-
-<h3 class="section-title">Radius and Tangent</h3>
 
 <div class="formula">
-Radius ⟂ Tangent at point of contact.
+i³ = -i
+<br>
+i⁴ = 1
+</div>
+
+<div class="formula">
+iⁿ repeats every 4 powers.
+</div>
+
+<h3 class="section-title">Complex Number</h3>
+
+<div class="formula">
+z = a + ib
+</div>
+
+<div class="formula">
+Real part = Re(z)=a
+<br>
+Imaginary part = Im(z)=b
+</div>
+
+<h3 class="section-title">Conjugate</h3>
+
+<div class="formula">
+If z=a+ib:
+<br><br>
+z̄ = a-ib
+</div>
+
+<div class="formula">
+z z̄ = a²+b²
+</div>
+
+<h3 class="section-title">Modulus</h3>
+
+<div class="formula important">
+|z| = √(a²+b²)
+</div>
+
+<h3 class="section-title">Argument</h3>
+
+<div class="formula">
+tan θ = b/a
+</div>
+
+<h3 class="section-title">Quadratic Equation</h3>
+
+<div class="formula">
+ax²+bx+c=0
+</div>
+
+<div class="formula important">
+x = (-b ± √(b²-4ac))/(2a)
+</div>
+
+<div class="formula">
+D=b²-4ac
 </div>
 
 </div>
 
 
-<!-- ================================================= -->
-<!-- 11 AREAS -->
-<!-- ================================================= -->
+<!-- =====================================================
+5 INEQUALITIES
+===================================================== -->
 
-<div id="areas" class="formula-page">
+<div id="inequalities" class="formula-page">
 
 <button onclick="goHome()">⬅ Home</button>
 
-<h2>11. Areas Related to Circles</h2>
+<h2>5. Linear Inequalities</h2>
+
+<h3 class="section-title">Basic Rules</h3>
+
+<div class="formula">
+If a>b:
+<br>
+a+c>b+c
+</div>
+
+<div class="formula">
+If a>b and c>0:
+<br>
+ac>bc
+</div>
+
+<div class="formula important">
+If a>b and c<0:
+<br>
+ac<bc
+<br><br>
+The inequality sign reverses when multiplying/dividing by a negative number.
+</div>
+
+<h3 class="section-title">Interval Notation</h3>
+
+<div class="formula">
+x>a → (a,∞)
+<br>
+x≥a → [a,∞)
+<br>
+x<a → (-∞,a)
+<br>
+x≤a → (-∞,a]
+</div>
+
+</div>
+
+
+<!-- =====================================================
+6 PNC
+===================================================== -->
+
+<div id="pnc" class="formula-page">
+
+<button onclick="goHome()">⬅ Home</button>
+
+<h2>6. Permutations & Combinations</h2>
+
+<h3 class="section-title">Factorial</h3>
+
+<div class="formula important">
+n! = n(n-1)(n-2)...3×2×1
+</div>
+
+<div class="formula">
+0! = 1
+</div>
+
+<h3 class="section-title">Permutation</h3>
+
+<div class="formula important">
+ⁿPᵣ = n!/(n-r)!
+</div>
+
+<h3 class="section-title">Combination</h3>
+
+<div class="formula important">
+ⁿCᵣ = n!/[r!(n-r)!]
+</div>
+
+<h3 class="section-title">Relations</h3>
+
+<div class="formula">
+ⁿPᵣ = r! × ⁿCᵣ
+</div>
+
+<div class="formula">
+ⁿCᵣ = ⁿCₙ₋ᵣ
+</div>
+
+<div class="formula">
+ⁿC₀ = ⁿCₙ = 1
+</div>
+
+<div class="formula">
+ⁿC₁ = ⁿCₙ₋₁ = n
+</div>
+
+<h3 class="section-title">Important Identity</h3>
+
+<div class="formula important">
+ⁿCᵣ + ⁿCᵣ₋₁ = ⁿ⁺¹Cᵣ
+</div>
+
+</div>
+
+
+<!-- =====================================================
+7 BINOMIAL
+===================================================== -->
+
+<div id="binomial" class="formula-page">
+
+<button onclick="goHome()">⬅ Home</button>
+
+<h2>7. Binomial Theorem</h2>
+
+<h3 class="section-title">Expansion</h3>
+
+<div class="formula important">
+(a+b)ⁿ =
+Σ ⁿCᵣ aⁿ⁻ʳ bʳ
+<br><br>
+r=0 to n
+</div>
+
+<h3 class="section-title">General Term</h3>
+
+<div class="formula important">
+Tᵣ₊₁ = ⁿCᵣ aⁿ⁻ʳ bʳ
+</div>
+
+<h3 class="section-title">First Terms</h3>
+
+<div class="formula">
+(a+b)² = a²+2ab+b²
+</div>
+
+<div class="formula">
+(a+b)³ =
+a³+3a²b+3ab²+b³
+</div>
+
+<div class="formula">
+(a-b)² = a²-2ab+b²
+</div>
+
+<div class="formula">
+(a-b)³ =
+a³-3a²b+3ab²-b³
+</div>
+
+<h3 class="section-title">Middle Term</h3>
+
+<div class="formula">
+If n is even:
+<br>
+one middle term = T₍ₙ/₂₊₁₎
+</div>
+
+<div class="formula">
+If n is odd:
+<br>
+two middle terms =
+T₍ₙ₊₁₎/₂ and T₍ₙ₊₃₎/₂
+</div>
+
+</div>
+
+
+<!-- =====================================================
+8 SEQUENCE
+===================================================== -->
+
+<div id="sequence" class="formula-page">
+
+<button onclick="goHome()">⬅ Home</button>
+
+<h2>8. Sequence & Series</h2>
+
+<h3 class="section-title">Arithmetic Progression</h3>
+
+<div class="formula">
+a, a+d, a+2d, ...
+</div>
+
+<div class="formula important">
+aₙ = a+(n-1)d
+</div>
+
+<div class="formula important">
+Sₙ = n/2[2a+(n-1)d]
+</div>
+
+<div class="formula">
+Sₙ = n/2(a+l)
+</div>
+
+<h3 class="section-title">Geometric Progression</h3>
+
+<div class="formula">
+a, ar, ar², ar³, ...
+</div>
+
+<div class="formula important">
+aₙ = arⁿ⁻¹
+</div>
+
+<div class="formula important">
+Sₙ = a(rⁿ-1)/(r-1)
+<br>
+r ≠ 1
+</div>
+
+<div class="formula">
+Equivalent:
+<br>
+Sₙ = a(1-rⁿ)/(1-r)
+</div>
+
+<h3 class="section-title">Infinite GP</h3>
+
+<div class="formula important">
+S∞ = a/(1-r)
+<br>
+|r|<1
+</div>
+
+<h3 class="section-title">Standard Sums</h3>
+
+<div class="formula">
+1+2+3+...+n
+=
+n(n+1)/2
+</div>
+
+<div class="formula">
+1²+2²+...+n²
+=
+n(n+1)(2n+1)/6
+</div>
+
+<div class="formula">
+1³+2³+...+n³
+=
+[n(n+1)/2]²
+</div>
+
+</div>
+
+
+<!-- =====================================================
+9 STRAIGHT LINES
+===================================================== -->
+
+<div id="straight" class="formula-page">
+
+<button onclick="goHome()">⬅ Home</button>
+
+<h2>9. Straight Lines</h2>
+
+<h3 class="section-title">Distance</h3>
+
+<div class="formula important">
+Distance between (x₁,y₁) and (x₂,y₂):
+<br><br>
+√[(x₂-x₁)²+(y₂-y₁)²]
+</div>
+
+<h3 class="section-title">Slope</h3>
+
+<div class="formula important">
+m=(y₂-y₁)/(x₂-x₁)
+</div>
+
+<h3 class="section-title">Slope Angle</h3>
+
+<div class="formula">
+m=tanθ
+</div>
+
+<h3 class="section-title">Equation of Line</h3>
+
+<div class="formula">
+y=mx+c
+</div>
+
+<div class="formula">
+y-y₁=m(x-x₁)
+</div>
+
+<div class="formula">
+y-y₁ =
+[(y₂-y₁)/(x₂-x₁)](x-x₁)
+</div>
+
+<h3 class="section-title">Two Point Form</h3>
+
+<div class="formula">
+(y-y₁)/(y₂-y₁)
+=
+(x-x₁)/(x₂-x₁)
+</div>
+
+<h3 class="section-title">Intercept Form</h3>
+
+<div class="formula">
+x/a + y/b = 1
+</div>
+
+<h3 class="section-title">General Form</h3>
+
+<div class="formula">
+Ax+By+C=0
+</div>
+
+<h3 class="section-title">Parallel Lines</h3>
+
+<div class="formula important">
+m₁=m₂
+</div>
+
+<h3 class="section-title">Perpendicular Lines</h3>
+
+<div class="formula important">
+m₁m₂=-1
+</div>
+
+<h3 class="section-title">Angle Between Lines</h3>
+
+<div class="formula important">
+tanθ =
+|(m₂-m₁)/(1+m₁m₂)|
+</div>
+
+<h3 class="section-title">Distance from Point to Line</h3>
+
+<div class="formula important">
+Distance =
+|Ax₁+By₁+C|/√(A²+B²)
+</div>
+
+</div>
+
+
+<!-- =====================================================
+10 CONIC
+===================================================== -->
+
+<div id="conic" class="formula-page">
+
+<button onclick="goHome()">⬅ Home</button>
+
+<h2>10. Conic Sections</h2>
 
 <h3 class="section-title">Circle</h3>
 
 <div class="formula important">
-Circumference = 2πr
-</div>
-
-<div class="formula important">
-Area = πr²
+x²+y²=r²
 </div>
 
 <div class="formula">
-Diameter = 2r
+(x-h)²+(y-k)²=r²
 </div>
 
 <div class="formula">
-r = d/2
-</div>
-
-<h3 class="section-title">Semicircle</h3>
-
-<div class="formula">
-Area = 1/2 πr²
-</div>
-
-<div class="formula">
-Curved Surface Length = πr
-</div>
-
-<h3 class="section-title">Sector</h3>
-
-<div class="formula important">
-Area of sector =
-θ/360 × πr²
-</div>
-
-<div class="formula important">
-Length of arc =
-θ/360 × 2πr
-</div>
-
-<h3 class="section-title">Segment</h3>
-
-<div class="formula">
-Area of segment =
-Area of sector - Area of triangle
-</div>
-
-<h3 class="section-title">π</h3>
-
-<div class="formula">
-π = 22/7
+Centre = (h,k)
 <br>
-or approximately 3.14159
+Radius = r
+</div>
+
+<h3 class="section-title">Parabola</h3>
+
+<div class="formula important">
+y²=4ax
+</div>
+
+<div class="formula">
+x²=4ay
+</div>
+
+<div class="formula">
+For y²=4ax:
+<br>
+Vertex=(0,0)
+<br>
+Focus=(a,0)
+<br>
+Directrix: x=-a
+</div>
+
+<div class="formula">
+For x²=4ay:
+<br>
+Focus=(0,a)
+<br>
+Directrix: y=-a
+</div>
+
+<h3 class="section-title">Ellipse</h3>
+
+<div class="formula important">
+x²/a² + y²/b² = 1
+<br>
+a>b
+</div>
+
+<div class="formula">
+c²=a²-b²
+</div>
+
+<div class="formula">
+Eccentricity:
+<br>
+e=c/a
+</div>
+
+<h3 class="section-title">Hyperbola</h3>
+
+<div class="formula important">
+x²/a² - y²/b² = 1
+</div>
+
+<div class="formula">
+c²=a²+b²
+</div>
+
+<div class="formula">
+e=c/a
 </div>
 
 </div>
 
 
-<!-- ================================================= -->
-<!-- 12 SURFACE AREA & VOLUME -->
-<!-- ================================================= -->
+<!-- =====================================================
+11 3D
+===================================================== -->
 
-<div id="surface" class="formula-page">
+<div id="threeD" class="formula-page">
 
 <button onclick="goHome()">⬅ Home</button>
 
-<h2>12. Surface Areas and Volumes</h2>
+<h2>11. Introduction to 3D Geometry</h2>
 
-<h3 class="section-title">Cuboid</h3>
-
-<div class="formula">
-Volume = lbh
-</div>
+<h3 class="section-title">Coordinates</h3>
 
 <div class="formula">
-TSA = 2(lb + bh + hl)
+A point in 3D is represented by:
+<br><br>
+(x,y,z)
 </div>
 
-<div class="formula">
-LSA = 2h(l+b)
-</div>
-
-<h3 class="section-title">Cube</h3>
-
-<div class="formula">
-Volume = a³
-</div>
-
-<div class="formula">
-TSA = 6a²
-</div>
-
-<div class="formula">
-LSA = 4a²
-</div>
-
-<h3 class="section-title">Cylinder</h3>
-
-<div class="formula">
-Volume = πr²h
-</div>
-
-<div class="formula">
-CSA = 2πrh
-</div>
-
-<div class="formula">
-TSA = 2πr(h+r)
-</div>
-
-<h3 class="section-title">Cone</h3>
-
-<div class="formula">
-Volume = 1/3 πr²h
-</div>
-
-<div class="formula">
-Slant height:
-<br>
-l = √(r²+h²)
-</div>
-
-<div class="formula">
-CSA = πrl
-</div>
-
-<div class="formula">
-TSA = πr(l+r)
-</div>
-
-<h3 class="section-title">Sphere</h3>
-
-<div class="formula">
-Volume = 4/3 πr³
-</div>
-
-<div class="formula">
-Surface Area = 4πr²
-</div>
-
-<h3 class="section-title">Hemisphere</h3>
-
-<div class="formula">
-Volume = 2/3 πr³
-</div>
-
-<div class="formula">
-CSA = 2πr²
-</div>
-
-<div class="formula">
-TSA = 3πr²
-</div>
-
-<h3 class="section-title">Combination of Solids</h3>
+<h3 class="section-title">Distance Formula</h3>
 
 <div class="formula important">
-Total Volume = Sum/Difference of individual volumes
+Distance between
+(x₁,y₁,z₁) and (x₂,y₂,z₂):
+<br><br>
+√[(x₂-x₁)²+(y₂-y₁)²+(z₂-z₁)²]
+</div>
+
+<h3 class="section-title">Origin</h3>
+
+<div class="formula">
+Origin = (0,0,0)
+</div>
+
+<h3 class="section-title">Distance from Origin</h3>
+
+<div class="formula">
+√(x²+y²+z²)
+</div>
+
+</div>
+
+
+<!-- =====================================================
+12 LIMITS DERIVATIVES
+===================================================== -->
+
+<div id="limits" class="formula-page">
+
+<button onclick="goHome()">⬅ Home</button>
+
+<h2>12. Limits & Derivatives</h2>
+
+<h3 class="section-title">Basic Limit Laws</h3>
+
+<div class="formula">
+lim [f(x)+g(x)]
+=
+lim f(x)+lim g(x)
 </div>
 
 <div class="formula">
-Total Surface Area = Only exposed surfaces are added.
+lim [f(x)g(x)]
+=
+(lim f(x))(lim g(x))
+</div>
+
+<h3 class="section-title">Important Trigonometric Limits</h3>
+
+<div class="formula important">
+lim(x→0) sinx/x = 1
+</div>
+
+<div class="formula important">
+lim(x→0) tanx/x = 1
+</div>
+
+<div class="formula important">
+lim(x→0) (1-cosx)/x² = 1/2
+</div>
+
+<h3 class="section-title">Derivative Definition</h3>
+
+<div class="formula important">
+f'(x)
+=
+lim(h→0)
+[f(x+h)-f(x)]/h
+</div>
+
+<h3 class="section-title">Basic Derivatives</h3>
+
+<div class="formula">
+d/dx(c)=0
+</div>
+
+<div class="formula">
+d/dx(xⁿ)=nxⁿ⁻¹
+</div>
+
+<div class="formula">
+d/dx(sin x)=cos x
+</div>
+
+<div class="formula">
+d/dx(cos x)=-sin x
+</div>
+
+<div class="formula">
+d/dx(tan x)=sec²x
+</div>
+
+<div class="formula">
+d/dx(cot x)=-cosec²x
+</div>
+
+<div class="formula">
+d/dx(sec x)=secx tanx
+</div>
+
+<div class="formula">
+d/dx(cosec x)=-cosecx cotx
+</div>
+
+<h3 class="section-title">Sum Rule</h3>
+
+<div class="formula">
+d/dx[f(x)+g(x)]
+=
+f'(x)+g'(x)
+</div>
+
+<h3 class="section-title">Product Rule</h3>
+
+<div class="formula important">
+d/dx(uv)=u(dv/dx)+v(du/dx)
+</div>
+
+<h3 class="section-title">Quotient Rule</h3>
+
+<div class="formula important">
+d/dx(u/v)
+=
+[v(du/dx)-u(dv/dx)]/v²
 </div>
 
 </div>
 
 
-<!-- ================================================= -->
-<!-- 13 STATISTICS -->
-<!-- ================================================= -->
+<!-- =====================================================
+13 STATISTICS
+===================================================== -->
 
 <div id="statistics" class="formula-page">
 
@@ -1058,68 +1348,62 @@ Total Surface Area = Only exposed surfaces are added.
 
 <h3 class="section-title">Mean</h3>
 
-<div class="formula">
-For ungrouped data:
-<br><br>
-Mean = Σx / n
+<div class="formula important">
+Mean = Σx/n
 </div>
 
 <div class="formula">
 For frequency distribution:
 <br><br>
-Mean = Σfx / Σf
+Mean = Σfᵢxᵢ / Σfᵢ
 </div>
 
-<h3 class="section-title">Assumed Mean Method</h3>
+<h3 class="section-title">Mean Deviation</h3>
 
 <div class="formula">
-Mean = a + (Σfd / Σf)
-</div>
-
-<h3 class="section-title">Step Deviation Method</h3>
-
-<div class="formula">
-Mean = a + h(Σfu / Σf)
-</div>
-
-<h3 class="section-title">Median</h3>
-
-<div class="formula important">
-Median =
-l + [(n/2 - cf)/f] × h
-</div>
-
-<h3 class="section-title">Mode</h3>
-
-<div class="formula important">
-Mode =
-l + [(f₁-f₀)/(2f₁-f₀-f₂)] × h
-</div>
-
-<h3 class="section-title">Empirical Relation</h3>
-
-<div class="formula important">
-Mode = 3 Median - 2 Mean
+MD about mean =
+Σ|xᵢ-x̄|/n
 </div>
 
 <div class="formula">
-Here:
-<br>
-l = lower boundary of median/modal class
-<br>
-h = class size
-<br>
-f = frequency of median class
-<br>
-cf = cumulative frequency before median class
+For frequency distribution:
+<br><br>
+MD =
+Σfᵢ|xᵢ-x̄|/Σfᵢ
+</div>
+
+<h3 class="section-title">Variance</h3>
+
+<div class="formula important">
+σ² =
+Σ(xᵢ-x̄)²/n
+</div>
+
+<div class="formula">
+For frequency distribution:
+<br><br>
+σ² =
+Σfᵢ(xᵢ-x̄)²/Σfᵢ
+</div>
+
+<h3 class="section-title">Standard Deviation</h3>
+
+<div class="formula important">
+σ = √σ²
+</div>
+
+<h3 class="section-title">Coefficient of Variation</h3>
+
+<div class="formula">
+CV = (σ/x̄) × 100
 </div>
 
 </div>
 
 
-<!-- ================================================= -->
-<!-- 14 PROBABILITY -->
-<!-- ================================================= -->
+<!-- =====================================================
+14 PROBABILITY
+===================================================== -->
 
 <div id="probability" class="formula-page">
 
@@ -1127,53 +1411,64 @@ cf = cumulative frequency before median class
 
 <h2>14. Probability</h2>
 
-<h3 class="section-title">Probability Formula</h3>
+<h3 class="section-title">Probability</h3>
 
 <div class="formula important">
-P(E) =
+P(E)=
 Number of favourable outcomes /
 Total number of equally likely outcomes
 </div>
 
-<h3 class="section-title">Range of Probability</h3>
+<h3 class="section-title">Range</h3>
 
-<div class="formula important">
+<div class="formula">
 0 ≤ P(E) ≤ 1
 </div>
 
 <h3 class="section-title">Impossible Event</h3>
 
 <div class="formula">
-P(impossible event) = 0
+P(∅)=0
 </div>
 
 <h3 class="section-title">Sure Event</h3>
 
 <div class="formula">
-P(sure event) = 1
+P(S)=1
 </div>
 
-<h3 class="section-title">Complementary Event</h3>
+<h3 class="section-title">Complement</h3>
 
 <div class="formula important">
-P(not E) = 1 - P(E)
+P(E')=1-P(E)
 </div>
 
 <div class="formula">
-P(E) + P(not E) = 1
+P(E)+P(E')=1
+</div>
+
+<h3 class="section-title">Addition Rule</h3>
+
+<div class="formula important">
+P(A∪B)
+=
+P(A)+P(B)-P(A∩B)
+</div>
+
+<div class="formula">
+If A and B are mutually exclusive:
+<br><br>
+P(A∪B)=P(A)+P(B)
 </div>
 
 </div>
-
 
 </div>
 
 
 <footer>
-
-<p>📚 Class 10 Maths Formula Book</p>
-<p>Basic + Important Formulas</p>
-
+<p>📚 Class 11 Mathematics Formula Book</p>
+<p>Basic + Important + Exam Formulas</p>
 </footer>
 
 
@@ -1224,9 +1519,9 @@ function goHome(){
 function searchChapter(){
 
     let input=document
-        .getElementById("search")
-        .value
-        .toLowerCase();
+    .getElementById("search")
+    .value
+    .toLowerCase();
 
     let chapters=document.querySelectorAll(".chapter");
 
@@ -1236,13 +1531,11 @@ function searchChapter(){
 
         if(text.includes(input)){
             chapter.style.display="block";
-        }
-        else{
+        }else{
             chapter.style.display="none";
         }
 
     });
-
 }
 
 </script>
